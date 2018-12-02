@@ -1,0 +1,902 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+      v2.0 | 20110126
+      License: none (public domain)
+   */
+
+html, body, div, span, applet, object, iframe, h1, h2, h2, h2, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, , sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 100%;
+   font: inherit;
+   vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+   display: block;
+}
+
+body {
+   line-height: 1.2;
+}
+
+ol, ul {
+   list-style: none;
+}
+
+blockquote, q {
+   quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+   content: '';
+   content: none;
+}
+
+table {
+   border-collapse: collapse;
+   border-spacing: 0;
+}
+
+/*EIGEN CSS*/
+
+html {
+   box-sizing: border-box;
+   /*height: 100%;
+   min-width: 1300px;*/
+   margin: 0;
+   padding: 0;
+}
+
+*, *:before, *:after {
+   box-sizing: inherit;
+}
+
+body {
+   /*height: 100%;*/
+   margin: 0;
+   padding: 0;
+}
+
+/*GRID*/
+
+#container {
+   font-family: "Encode sans", tahoma, arial;
+   line-height: 1.5;
+   color: rgb(19, 30, 51);
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr;
+   grid-template-rows: repeat(6, auto);
+   grid-template-areas: "header header header header" "who who who who" "what what what what" "support support support support" "industries industries industries industries" "contact contact contact contact";
+}
+
+/*HEADER*/
+
+header {
+   height: 100%;
+   grid-area: header;
+   justify-content: space-around;
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-template-rows: 4rem 1fr;
+   grid-template-areas: "nav" "cover";
+   width: 100%;
+}
+
+/*NAVIGATION*/
+
+nav {
+   position: fixed;
+   grid-area: nav;
+}
+
+nav {
+   width: 100%;
+   display: flex;
+   display: inline-block;
+   height: 4rem;
+}
+
+.nav {
+   list-style-type: none;
+   background-color: white;
+   margin: 0;
+   z-index: 5;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: flex-end;
+   padding: 0;
+   border-bottom: 2px solid rgb(48, 77, 129);
+}
+
+.nav img {
+   margin: 0;
+   height: 3rem;
+   /*padding-bottom: 1.5rem;*/
+}
+
+.nav .left {
+   margin-right: auto;
+}
+
+.nav .left a {
+   padding: 0;
+   padding-left: 1rem;
+   margin: 0.8rem 0 0 0;
+}
+
+nav li {
+   position: relative;
+}
+
+.nav li a {
+   font-weight: 300;
+   font-size: 1rem;
+   line-height: 105%;
+   text-decoration: none;
+   display: block;
+   text-align: center;
+   vertical-align: middle;
+   text-transform: uppercase;
+   padding: 1.4rem;
+   width: 7rem;
+   height: 4rem;
+   color: rgb(19, 30, 51);
+}
+
+.nav li a:hover {
+   color: rgb(228, 113, 17);
+}
+
+nav li a.sprite {
+   width: 3rem;
+   margin: 0.8rem 0.3rem 0rem 0.3rem;
+}
+
+nav a.youtube {
+   background: url('../images/youtube.png') no-repeat;
+   background-size: 80%;
+   transition: background-size 2s;
+   display: inline-block;
+   vertical-align: middle;
+}
+
+nav a.youtube:hover {
+   background-size: 60%;
+}
+
+nav a.linkedin {
+   background: url('../images/linkedin.png') no-repeat;
+   background-size: 80%;
+   transition: background-size 2s;
+}
+
+nav a.linkedin:hover {
+   background-size: 60%;
+}
+
+nav li a.active {
+   color: rgb(228, 113, 17);
+}
+
+/*Style 'show menu' label button and hide it by default*/
+
+.show-menu {
+   text-decoration: none;
+   display: none;
+}
+
+/*Hide checkbox*/
+
+input[type=checkbox] {
+   display: none;
+}
+
+/*Show menu when invisible checkbox is checked*/
+
+input[type=checkbox]:checked~.nav {
+   display: block;
+}
+
+/*DROPDOWN*/
+
+.nav ul {
+   background-color: rgba(48, 77, 129, 0.5);
+   list-style-type: none;
+   position: absolute;
+   left: -9999px;
+   margin: 0;
+   padding: 0;
+   height: auto;
+}
+
+.nav li {
+   height: 4rem;
+}
+
+.nav ul a {
+   padding-top: 1.1rem;
+   text-align: center;
+   /*vertical-align: middle;*/
+   font-size: 0.9rem;
+}
+
+.nav li:hover ul {
+   left: 0;
+}
+
+.nav li:hover a {
+   color: rgb(228, 113, 17);
+}
+
+.nav li:hover ul a {
+   text-decoration: none;
+   color: white;
+}
+
+.nav li:hover ul li a:hover {
+   background-color: #304d81;
+   color: rgb(228, 113, 17);
+}
+
+/*FIGURE*/
+
+.cover {
+   grid-area: cover;
+   width: 100%;
+   background-color: yellow;
+}
+
+.cover {
+   z-index: -2;
+   background: url("../images/cover.jpg") no-repeat center center fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+   margin: 0;
+}
+
+#slidy-container {
+   width: 80%;
+   overflow: hidden;
+   margin: 0 auto;
+}
+
+/*ARTICLE*/
+
+article {
+   display: grid;
+   /*grid-template-columns: 13rem 1fr 1fr 13rem;*/
+}
+
+article h1 {
+   font-size: 3rem;
+   color: rgb(228, 113, 17);
+   letter-spacing: 6px;
+   text-align: left;
+   background-color: rgb(255, 255, 255);
+   padding: 1rem 0;
+   margin: 0;
+   padding-left: 13rem;
+}
+
+article h2 {
+   padding: 1.2rem 0;
+   margin: 0;
+   flex: 100%;
+   font-size: 2.5rem;
+}
+
+article em {
+   font-style: normal;
+   font-weight: bold;
+}
+
+.anchor {
+   display: block;
+   height: 4rem;
+   margin-top: -4rem;
+   visibility: hidden;
+}
+
+/*ARTICLE who*/
+
+article.who {
+   grid-template-columns: 13rem 1fr 1fr 13rem;
+   height: auto;
+   grid-area: who;
+   display: grid;
+   grid-template-rows: repeat(4, auto);
+   align-items: start;
+   background-color: rgba(48, 77, 129, 0.95);
+   grid-template-areas: "about about about about" ". group group ." "value value value value" ". key key .";
+}
+
+.about {
+   grid-area: about;
+}
+
+.who img {
+   width: 100%;
+   /*dimensions are mandatory*/
+   /*height: 35em; // dimensions are mandatory*/
+   object-fit: cover;
+   overflow: hidden;
+   /*width: 50%;*/
+}
+
+article.who ul {
+   list-style-type: none;
+   padding-left: 3rem;
+   margin: 0;
+   line-height: 1.5;
+}
+
+article.who ul em {
+   font-style: normal;
+   font-weight: bold;
+}
+
+article.who li {
+   list-style-position: inside;
+   text-indent: -1.8rem;
+}
+
+.checkmark li:before {
+   content: "\2713";
+   padding-right: 1rem;
+}
+
+.group {
+   height: auto;
+   grid-area: group;
+   padding-bottom: 2rem;
+   color: white;
+}
+
+.value {
+   grid-area: value;
+   background-color: white;
+   padding: 0 13rem 2rem 13rem;
+}
+
+.key {
+   grid-area: key;
+   padding-bottom: 2rem;
+   color: white;
+}
+
+/*ARTICLE WHAT*/
+
+article.what {
+   display: grid;
+   grid-template-columns: 13rem 1fr 1fr 13rem;
+   height: auto;
+   grid-area: what;
+   grid-template-rows: repeat(3, auto);
+   align-items: start;
+   background-color: rgba(48, 77, 129, 0.95);
+   grid-template-areas: "solutions solutions solutions solutions" " . products products . " " services services services services ";
+}
+
+.solutions {
+   grid-area: solutions;
+}
+
+/*article.what table td {
+   text-align: center;
+}*/
+
+.products {
+   grid-area: products;
+   color: white;
+   padding-bottom: 2rem;
+}
+
+.products img {
+   height: 10rem;
+}
+
+.prod {
+   display: grid;
+   grid-template-rows: auto;
+   grid-template-columns: "1fr 1fr 1fr 1fr ";
+   grid-template-areas: "isee wicare solution sensor";
+   grid-gap: 1.5rem;
+}
+
+.prod th {
+   text-align: center;
+   height: 5rem;
+   font-size: 1rem;
+}
+
+.prod td.list {
+   text-align: justify;
+   font-size: 0.8rem;
+}
+
+.prod td.img {
+   text-align: center;
+   height: 11rem;
+}
+
+.isee {
+   grid-area: isee;
+   display: flex;
+}
+
+.wicare {
+   grid-area: wicare;
+   display: flex;
+}
+
+.solution {
+   grid-area: solution;
+   display: flex;
+}
+
+.sensor {
+   grid-area: sensor;
+   display: flex;
+}
+
+.services {
+   grid-area: services;
+   background-color: white;
+   padding: 0 13rem 2rem 13rem;
+}
+
+.serv {
+   display: grid;
+   grid-template-rows: auto;
+   grid-template-columns: "1fr 1fr";
+   grid-template-areas: "remote lifecycle";
+   grid-gap: 2rem;
+}
+
+.remote {
+   grid-area: remote;
+   display: flex;
+}
+
+.lifecycle {
+   grid-area: lifecycle;
+   display: flex;
+}
+
+.services th {
+   text-align: left;
+   height: 2rem;
+   font-size: 1rem
+}
+
+.services td {
+   text-align: left;
+}
+
+.serv ul em {
+   font-style: normal;
+   font-weight: bold;
+}
+
+.serv td {
+   padding-top: 1rem;
+   padding-left: 0;
+}
+
+div.services li {
+   list-style-position: inside;
+   text-indent: -3rem;
+   text-align: left;
+}
+
+.checkmark li:before {
+   content: "\2714";
+   padding-right: 1rem;
+}
+
+/*article support*/
+
+.support {
+   display: grid;
+   grid-template-columns: 13rem 1fr 1fr 13rem;
+   height: auto;
+   grid-area: support;
+   grid-template-rows: repeat(2, auto);
+   align-items: start;
+   background: url("../images/PGfilter.jpg") no-repeat center center fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+   margin: 0;
+   grid-template-areas: "supp supp supp supp" " . sales sales . ";
+}
+
+.supp {
+   grid-area: supp;
+}
+
+.sales {
+   grid-area: sales;
+   display: grid;
+   grid-template-columns: "1fr 1fr";
+   grid-template-rows: "auto";
+   grid-template-areas: "preSales postSales";
+   grid-gap: 2rem;
+   padding-bottom: 2rem;
+}
+
+.sales th {
+   padding: 1.2rem 0;
+   margin: 0;
+   font-size: 2.3rem;
+   text-align: left;
+   color: rgb(19, 30, 51);
+}
+
+.sales td h3 {
+   font-size: 1.3rem;
+   height: 2rem;
+   color: rgb(19, 30, 51);
+}
+
+.preSales {
+   grid-area: preSales;
+   display: flex;
+   color: rgb(19, 30, 51);
+}
+
+.postSales {
+   grid-area: postSales;
+   display: flex;
+   color: rgb(19, 30, 51);
+}
+
+/*article Industries*/
+
+article.industries {
+   grid-template-columns: 13rem 1fr 1fr 13rem;
+   height: auto;
+   grid-area: industries;
+   display: grid;
+   grid-template-rows: repeat(4, auto);
+   align-items: start;
+   background-color: rgba(48, 77, 129, 0.95);
+   grid-template-areas: "indust indust indust indust" ". industries industries .";
+   padding-bottom: 2rem;
+   color: white;
+}
+
+.indust {
+   grid-area: indust;
+}
+
+.industries {
+   grid-area: industries;
+}
+
+.industries table {
+   text-align: center;
+}
+
+div.industries td {
+   width: 15rem;
+   padding: 2rem;
+   font-size: 1.3rem;
+}
+
+.industries img {
+   text-align: center;
+   width: 8rem;
+}
+
+/*article contact*/
+
+article.contact {
+   grid-template-columns: 13rem 1fr 1fr 13rem;
+   height: auto;
+   grid-area: contact;
+   display: grid;
+   grid-template-rows: repeat(4, auto);
+   align-items: start;
+   background-color: rgba(48, 77, 129, 0.95);
+   grid-template-areas:
+   "cont cont cont cont"
+   ". offices offices ."
+   ". mapUSA mapUSA ."
+   "cform cform cform cform";
+   color: white;
+}
+
+.cont {
+   grid-area: cont;
+}
+
+.offices {
+   grid-area: offices;
+   padding-bottom: 2rem;
+}
+
+address{
+   display: grid;
+   grid-template-rows: auto;
+   grid-template-columns: "1fr 1fr 1fr 1fr ";
+   grid-template-areas: "gulf southeast westcoast corporate";
+   grid-gap: 1.5rem;
+}
+.gulf{
+   grid-area: gulf;
+}
+.southeast{
+   grid-area: southeast;
+}
+.westcoast{
+   grid-area: westcoast;
+}
+.corporate{
+   grid-area: corporate;
+}
+
+address th {
+   /*padding: 2rem 1rem 1rem 1rem;*/
+   font-style: normal;
+   font-size: 1.3rem;
+   text-align: left;
+   height: 2rem;
+}
+
+.offices td {
+   width: 25%;
+   /*padding: 2rem 1rem;*/
+   font-style: normal;
+   text-align: left;
+}
+
+.offices a {
+   color: inherit;
+   text-decoration: none;
+}
+
+.offices a:hover {
+   color: rgb(228, 118, 17);
+}
+address img {
+   width: 120%;
+   /*object-fit: cover;*/
+   /*overflow: hidden;*/
+   transition: transform 2s;
+   -webkit-transition: -webkit-transform 2s;
+}
+
+.offices img.Icare:hover {
+   -webkit-transform: scale(1.2);
+   transform: scale(1.2);
+}
+.mapUSA{
+   grid-area: mapUSA;
+   padding-bottom: 2rem;
+}
+.mapUSA {
+   margin: 0;
+   text-align: center;
+}
+.mapUSA img{
+   width: 100%;
+   object-fit: cover;
+   overflow: hidden;
+}
+.cform {
+   grid-area: cform;
+   height: auto;
+   /*display: flex;*/
+   padding: 2rem 13rem 2rem 13rem;
+   background: url(../images/form.jpg) no-repeat center center fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+}
+
+/*form h2 {
+   padding-left: 13rem;
+}*/
+
+form {
+   width: auto;
+   grid-area: form;
+   background-color: rgba(250, 250, 250, 0.6);
+   padding: 1rem;
+   color: rgb(19, 30, 51);
+   /*margin: 2rem 13rem 2rem 13rem;
+   margin-left: 13rem;
+   margin-right: 13rem;
+   color: rgb(19, 30, 51);*/
+}
+
+form li {
+   padding: 1rem;
+   list-style-type: none;
+}
+
+input, textarea {
+   color: rgb(19, 30, 51);
+   font-family: "Encode sans", tahoma, arial;
+   padding: 1rem;
+   margin-left: 1rem;
+   font-size: 0.8rem;
+}
+textarea {
+   width: 26.5rem;
+}
+
+form text {
+   font-family: "Encode sans", tahoma, arial;
+}
+
+/*Media Queries
+---------------------------------------------*/
+
+@media screen and (max-width: 980px) {
+   html {
+      font-size: 0.8rem;
+   }
+   .header {
+      padding: 1rem;
+   }
+   .nav li a {
+      width: 7rem;
+      font-size: 1rem;
+   }
+   .nav ul a {
+      font-size: 0.8rem;
+   }
+   article.who, article.what, article.support, article.industries, article.contact {
+      grid-template-columns: 8rem 1fr 1fr 8rem;
+   }
+   article h1 {
+      padding-left: 8rem;
+   }
+   .value {
+      padding: 0 8rem 2rem 8rem;
+   }
+   .services {
+      padding: 0 8rem 2rem 8rem;
+   }
+   .cform {
+      padding: 2rem 8rem 2rem 8rem;}
+      address img {
+         width: 60%;}
+}
+
+/*TABLET*/
+
+@media screen and (max-width: 730px) {
+   /*NAVIGATION*/
+   li.left {
+      display: none;
+   }
+   .nav {
+      display: block;
+      flex-direction: column;
+      background: rgba(48, 77, 129, 0.7);
+      display: none;
+      width: 30%;
+   }
+   .nav li a {
+      /*text-align: right;*/
+      padding-left: 2rem;
+      width: 30%;
+   }
+   .nav li.social {
+      padding-left: 2.5rem;
+   }
+   .nav .hidden {
+      display: none;
+   }
+   .show-menu {
+      display: block;
+      text-align: left;
+      grid-area: nav;
+      background: white;
+      width: 100%;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      padding: 1rem;
+      height: auto;
+      border-bottom: 2px solid rgb(48, 77, 129);
+   }
+   .show-menu:hover {
+      color: rgb(228, 113, 17);
+   }
+   #navigation img {
+      /*display: block;*/
+      margin-right: 2rem;
+      height: 2rem;
+   }
+   /*ARTICLE*/
+   article {
+      font-size: 0.8rem;
+   }
+   article.who, article.what, article.support, article.industries, article.contact {
+      grid-template-columns: 4rem 1fr 1fr 4rem;
+   }
+   article h1 {
+      padding-left: 4rem;
+      font-size: 1.7rem;
+   }
+   article h2 {
+      font-size: 1.5rem;
+   }
+   .sales th {
+      font-size: 1.5rem;
+   }
+   .sales td h3 {
+      font-size: 1.3rem;
+      height: 2rem;
+      color: rgb(19, 30, 51);
+   }
+   .value {
+      padding: 0 4rem 2rem 4rem;
+   }
+   .prod {
+      display: grid;
+      grid-template-rows: auto;
+      grid-template-columns: "1fr 1fr";
+      grid-template-areas: "isee wicare" "solution sensor";
+      grid-gap: 1.5rem;
+   }
+   .services {
+      padding: 0 4rem 2rem 4rem;
+   }
+   div.industries td {
+      width: 8rem;
+      padding: 1rem;
+      font-size: 1rem;
+   }
+   .industries img {
+      text-align: center;
+      max-width: 6rem;
+   }
+   .cform {
+      padding: 0;}
+   .cform h2{
+      padding-left: 4rem;
+   }
+}
+
+/*Phone*/
+
+@media screen and (max-width: 480px) {
+   article {
+      display: grid;
+      font-size: 0.8rem;
+   }
+   article.who, article.what, article.support, article.industries, article.contact {
+      grid-template-columns: 2rem 1fr 1fr 2rem;
+   }
+   article h1 {
+      padding-left: 2rem;
+   }
+   .value {
+      padding: 0 2rem 2rem 2rem;
+   }
+   .services {
+      padding: 0 2rem 2rem 2rem;
+   }
+   div.industries td {
+      width: 6rem;
+      padding: 0.8rem;
+      font-size: 0.8rem;
+   }
+   .industries img {
+      text-align: center;
+      width: 5rem;
+   }
+   /*.cform {
+      padding: 2rem 2rem 2rem 2rem;}*/
+}
