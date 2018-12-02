@@ -1,11 +1,15 @@
 {
   "name": "icare",
   "version": "1.0.0",
-  "description": "flex website onepager",
+  "description": "grid website onepager",
   "main": "index.js",
+  "homepage": "https://llnda.github.io/Icare",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "gh-pages -d dist"
   },
   "author": "Linda Aerts",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "gh-pages": "^2.0.1"
+  }
 }
